@@ -1,49 +1,165 @@
-html, body{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+html,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+  background: gray;
+  font-size: 12px;
 }
-.grid {
-  display: grid;
+.main {
   width: 100%;
   height: 100vh;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 0.5fr 1fr 0.5fr;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-.header{
-    grid-column: 2;
-    display: flex;
-    justify-items: center;
-    align-items: center;
-}
+
 .container {
-  width: 300px;
-  background: gray;
-  grid-row: 2;
-  grid-column: 2;
+  width: 100%;
+  max-width: 350px;
+  min-width: 200px;
+  height: 100%;
+  max-height: 600px;
+  background: black;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 }
-.clock-container{
-   
-    background: black;
-    height: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.clock-container {
+  position: relative;
+  border: double green 5px;
+  background: black;
+
+  width: 80%;
+  padding-top: 80%;
+
+  border-radius: 50%;
 }
 .clock {
-    color: white;
-    font-size: 50px;
-    font-weight: bold;
-    
-    vertical-align: middle;
+  color: green;
+  font-size: 4em;
+  font-weight: bold;
+  
+  width: 90%;
+  padding: 15px 5px;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
 }
-.start{
-    align-self: center;
+.hour:hover,
+.minute:hover,
+.second:hover {
+  transform: scale(1.1);
 }
-.sound audio{
-    width: 100%;
+
+.btn-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
+.btn {
+  width: calc(25% + 10px);
+  padding-top: 25%;
+  border-radius: 50%;
+  background: black;
+  border: double 5px;
+  outline: none;
+  font-size: 2em;
+  color: green;
+
+  position: relative;
+  overflow: hidden;
+}
+.btn span {
+  font-size: 2rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.btn-ring {
+  width: 25%;
+}
+.input-musicUpload {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 100px;
+  opacity: 0;
+}
+
+.btn:hover {
+  border: solid 5px;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+button::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+.sound {
+  display: none;
+}
+
+.timeElapsed {
+  color: red;
+  border-color: red;
+}
+
+.pendulum-1 , .pendulum-2{
+  height: 100%;
+  width: 100%;
+  /* background: white; */
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.pendulum-ball-1 , .pendulum-ball-2{
+  width: 30px;
+  height: 30px;
+  background: red;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 15px);
+ 
+}
+
+
+
+@keyframes spin-one{
+  25%{transform: rotate(-70deg)}
+ 
+  50%, 100% {transform: rotate(0deg)}
+}
+@keyframes spin-two{
+  25%{transform: rotate(70deg)}
+
+  50%, 100% {transform: rotate(0deg)}
+}
+.pendulum-animate{
+  display: block;
+  animation: spin-one 2s 1s infinite linear ;
+  
+}
+.pendulum-2-animate{
+  display: block;
+  animation: spin-two 2s   infinite linear ;
+  }

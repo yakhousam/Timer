@@ -5,23 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="timer.css">
-    <title>Document</title>
+    <title>Timer</title>
 </head>
 <body>
-    <main class="grid">
-        <header class="header">
+    <main class="main">
+        <!-- <header class="header">
                 <h1>Timer</h1>
-        </header>
+        </header> -->
         
    <div class="container">
         <div class="clock-container">
-           <span class="clock"> 00:00:00</span>
+           <div class="clock">
+               <span class="hour">00</span>
+               <span class="colone">:</span>
+               <span class="minute">00</span>
+               <span class="colone">:</span>
+               <span class="second">00</span>
+            </div>
+            <div class="pendulum-1">
+                <div class="pendulum-ball-1"></div>
+            </div>
+            <div class="pendulum-2">
+                <div class="pendulum-ball-2 "></div>
+            </div>
         </div>
-        <input type="range" min="0" max="180" value="0" name="time" id="time">
-        <label for="time"></label>
-<button class="start">Start</button>
+     <div class="btn-container">
+       
+        <button class="btn-start btn"><span>&#9655;</span></button>
+        <button class="btn-reset btn"><span>&#8634;</span></button>
+        <div class="btn-ring btn" ><span>&#9836;</span><input class="input-musicUpload" type="file" accept=".mp3" ></div>
+        <!-- <input type="file" name="" id="" > -->
+        
+     </div>   
+
         <div class="sound">
-            <audio src="alone.mp3" controls></audio>
+            <audio src="alone.mp3" loop></audio>
         </div>
    </div> 
 </main>
