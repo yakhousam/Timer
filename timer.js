@@ -110,9 +110,9 @@ function secondToTime(second){
     }
     let s = second;
     let h = Math.floor(s / 3600);
+    s -= h * 3600 
     let m = Math.floor(s / 60);
-    
-    s -= h * 3600 + m * 60;
+    s -=  m * 60;
     
     return formatNumber(h)+":"+formatNumber(m)+":"+formatNumber(s) ;
 }
