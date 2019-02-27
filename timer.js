@@ -12,9 +12,9 @@ const btn_reset = document.querySelector('.btn-reset');
 let second = 0;
 let stratTimerEvent='';
 
-if(localStorage.audioFile){
-    music.setAttribute('src', localStorage.audioFile);
-}
+//if(localStorage.audioFile){
+//    music.setAttribute('src', localStorage.audioFile);
+//}
 
 input_musicFile.addEventListener('change', (e)=>{
     let file = e.target.files[0].name;
