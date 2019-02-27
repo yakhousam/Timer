@@ -60,9 +60,10 @@ sd.addEventListener('wheel', (e)=>{
 })
 
 btn_start.addEventListener('click', ()=>{
-    second = Number(hr.textContent)* 3600 + Number(mn.textContent) *60 + Number(sd.textContent)
-   
-    startTimer();
+    second = Number(hr.textContent)* 3600 + Number(mn.textContent) *60 + Number(sd.textContent);
+    if(second > 0){
+      startTimer();
+    }
 });
 btn_reset.addEventListener('click', resetTimer);
 
